@@ -25,9 +25,16 @@ The primitive `null?` is defined only for lists.
 
 The primitive `eq?` takes two arguments. Each must be a non-numeric atom.
 
-### The First Commandment (preliminary)
+### The First Commandment
+
+#### Preliminary (ch 2)
 
 Always ask `null?` as the first question in expressing any function.
+
+#### First Revision (ch 4)
+
+When recurring on a list of atoms, `lat`, ask two questions about it: `(null? lat)` and else.
+When recurring on a number, `n`, ask two questions about it: `(zero? n)` and else.
 
 ### The Second Commandment
 
@@ -37,7 +44,20 @@ Use `cons` to build lists.
 
 When building a list, describe the first typical element, and then `cons` it onto the natural recursion.
 
-### The Fourth Commandment (preliminary)
+### The Fourth Commandment
+
+#### Preliminary (ch 3)
 
 Always change at least one argument while recurring. It must be changed to be closer to termination.
 The changing argument must be tested in the termination condition: when using `cdr`, test termination with `null?`.
+
+#### First Revision (ch 4)
+
+Always change at least one argument while recurring. It must be changed to be closer to termination.
+The changing argument must be tested in the termination condition: when using `cdr`, test termination with `null?` and when using `sub1`, test termination with `zero?`.
+
+### The Fifth Commandment
+
+When building a value with `o+`, always use `0` for the value of the terminating line, for adding `0` does not change the value of an addition.
+When building a value with `*`, always use `1` for the value of the terminating line, for multiplying by `1` does not change the value of a multiplication.
+When building a value with `cons`, always consider `()` for the value of the terminating line.
