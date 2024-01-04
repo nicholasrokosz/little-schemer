@@ -1,5 +1,7 @@
 #lang racket
 
+(provide atom?)
+
 (define (atom? s)
   (not (list? s)))
 

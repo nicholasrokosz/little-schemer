@@ -1,5 +1,7 @@
 #lang racket
 
+(provide eqan?)
+
 
 (define (add1 n)
   (+ n 1))
