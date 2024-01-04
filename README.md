@@ -27,6 +27,9 @@ The primitive `eq?` takes two arguments. Each must be a non-numeric atom.
 
 ### The First Commandment
 
+<details>
+  <summary>Older versions</summary>
+
 #### Preliminary (ch 2)
 
 Always ask `null?` as the first question in expressing any function.
@@ -37,6 +40,8 @@ When recurring on a list of atoms, `lat`, ask two questions about it: `(null? la
 When recurring on a number, `n`, ask two questions about it: `(zero? n)` and else.
 
 #### Final Version (ch 5)
+
+</details>
 
 When recurring on a list of atoms, `lat`, ask two questions about it: `(null? lat)` and else.
 When recurring on a number, `n`, ask two questions about it: `(zero? n)` and else.
@@ -52,6 +57,9 @@ When building a list, describe the first typical element, and then `cons` it ont
 
 ### The Fourth Commandment
 
+<details>
+  <summary>Older versions</summary>
+
 #### Preliminary (ch 3)
 
 Always change at least one argument while recurring. It must be changed to be closer to termination.
@@ -63,6 +71,8 @@ Always change at least one argument while recurring. It must be changed to be cl
 The changing argument must be tested in the termination condition: when using `cdr`, test termination with `null?` and when using `sub1`, test termination with `zero?`.
 
 #### Final Version (ch 5)
+
+</details>
 
 Always change at least one argument while recurring. When recurring on a list of atoms, `lat`, use `(cdr lat)`. When recurring on a number, `n`, use `(sub1 n)`.
 And when recurring on a list of S-expressions, `l`, use `(car l)` and `(cdr l)` if neither `(null? l)` nor `(atom? (car l))` are true.
